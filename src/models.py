@@ -31,6 +31,32 @@ class Vehicles(Base):
     user_id = Column(Integer, ForeignKey('users.id'))
     users = relationship(Users)
 
+class Character(Base):
+    __tablename__ = 'character'
+    # Here we define columns for the table address.
+    # Notice that each column is also a normal Python instance attribute.
+    id = Column(Integer, primary_key=True)
+    name = Column(String(30))
+    height = Column(Integer)
+    birth_year = Column(String(30))
+    gender = Column(String(30))
+    user_id = Column(Integer, ForeignKey('users.id'))
+    users = relationship(Users)
+
+class Planet(Base):
+    __tablename__ = 'planet'
+    # Here we define columns for the table address.
+    # Notice that each column is also a normal Python instance attribute.
+    id = Column(Integer, primary_key=True)
+    name = Column(String(30))
+    diameter = Column(Integer))
+    climate = Column(String(30))
+    terrain = Column(String(30))
+    population = Column(String(30))
+    user_id = Column(Integer, ForeignKey('users.id'))
+    users = relationship(Users)
+
+
     def to_dict(self):
         return {}
 
