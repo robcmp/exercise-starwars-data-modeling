@@ -23,7 +23,6 @@ class Favorites(Base):
     # Here we define columns for the table person
     # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    UserID = Column(Integer, ForeignKey('user.id'))
     category = Column(String(30))
     favorite_name = Column(String(30))
     users_id= Column(Integer, ForeignKey('users.id'))
